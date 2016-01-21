@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  vars: 
+    host: 172.31.0.42
   tasks:
     - name: Install Git
       become: yes
@@ -21,11 +23,14 @@
     - name: set M2_HOME 
       lineinfile: dest=/home/ec2-user/.bash_profile regexp="^M2_HOME.*" insertbefore="^PATH=" line="M2_HOME=/home/ec2-user/Maven/apache-maven-3.3.9/"
     - name: export M2_HOME
-      lineinfile: dest=/home/ec2-user/.bash_profile insertafter="^M2_HOME=" line="export M2_HOME"
+      lineinfile: dest=/home/ec2-user/.bash_profile regexp="^export M2_HOME.*" insertafter="^M2_HOME=" line="export M2_HOME"
     - name: set M2
-      lineinfile: dest=/home/ec2-user/.bash_profile insertafter="^M2_HOME=" line="M2=$M2_HOME/bin"
+      lineinfile: dest=/home/ec2-user/.bash_profile regexp="^M2=.*" insertafter="^M2_HOME=" line="M2=$M2_HOME/bin"
     - name: export M2
-      lineinfile: dest=/home/ec2-user/.bash_profile insertafter="^M2=" line="export M2"
+      lineinfile: dest=/home/ec2-user/.bash_profile regexp="^export M2.*" insertafter="^M2=" line="export M2"
     - name: Add M2 to PATH
-      lineinfile: dest=/home/ec2-user/.bash_profile insertafter="^PATH=" line="PATH=$PATH:$M2"
+      lineinfile: dest=/home/ec2-user/.bash_profile regexp="^PATH=$PATH:$M2.*" insertafter="^PATH=" line="PATH=$PATH:$M2"
+
+    - name: Update repository host
+      template: name=/home/ec2-user/CourseFiles/settings.xml dest=$M2_HOME/conf/settings.xml
 
