@@ -1,0 +1,123 @@
+ ansible
+    2  pip install ansible
+    3  sudo pip install ansible
+    4  ansible
+    5  ansible -c local
+    6  ansible localhost -c local
+    7  ansible localhost -c local -v
+    8  ansible localhost -c local -m ping
+    9  ansible -m ping
+   10  ansible localhost -m ping
+   11  ansible localhost -a "/bin/echo hello"
+   12  yum list | grep java7
+   13  yum list | grep java8
+   14  yum list | grep java
+   15  sudo yum install java-1.8.0-openjdk-devel.x86_64
+   16  java -version
+   17  yum list installed | grep java
+   18  yum remove java-1.7.0-openjdk.x86_64
+   19  sudo yum remove java-1.7.0-openjdk.x86_64
+   20  java -version
+   21  javac
+   22  echo $JAVA_HOME
+   23  ls /usr/lib/jvm
+   24  ls /usr/lib/jvm/jre
+   25  ls /usr/lib/jvm/jre/bin
+   26  yum install docker
+   27  sudo yum install docker
+   28  sudo usermod -aG docker ec2-user
+   29  sudo service docker start
+   30  vi Dockerfile
+   31  docker images -a
+   32  docker -a images
+   33  exit
+   34  sudo service docker start
+   35  docker images -a
+   36  docker build
+   37  docker build Dockerfile
+   38  docker build ~/Dockerfile
+   39  mkdir docker-image
+   40  mv Dockerfile docker-image/
+   41  docker build docker-image/Dockerfile
+   42  docker build /home/ec2-user/docker-image/Dockerfile
+   43  cd docker-image/
+   44  vi Dockerfile
+   45  docker build /home/ec2-user/docker-image/Dockerfile
+   46  cd
+   47  mkdir eyal
+   48  mv docker-image/Dockerfile eyal/
+   49  docker build -t eyal/Dockerfile
+   50  cd docker-image/
+   51  docker build -t ~/eyal/Dockerfile .
+   52  docker build -t /home/ec2-user/eyal/Dockerfile .
+   53  cd
+   54  mkdir ex1
+   55  cd ex1/
+   56  docker build -t eyal/e1 /home/ec2-user/eyal/asdfsdf
+   57  cd
+   58  mv eyal/Dockerfile docker-image/
+   59  cd ex1/
+   60  docker build -t eyal/e1 /home/ec2-user/docker-image/Dockerfile
+   61  docker build -t eyal/e1 /home/ec2-user/docker-image/
+   62  cd ../docker-image/
+   63  vi Dockerfile
+   64  docker build -t eyal/e1 .
+   65  vi Dockerfile
+   66  docker build -t eyal/e1 .
+   67  docker images -a
+   68  docker run -i -t --rm eyal/e1
+   69  vi Dockerfile
+   70  ls -lrt
+   71  git clone https://github.com/meyals/CourseFiles.git
+   72  docker run -i -t --rm eyal/e1
+   73  vi Dockerfile
+   74  docker run -i -t --rm eyal/e1
+   75  docker build -t eyal/e1 .
+   76  docker run -i -t --rm eyal/e1
+   77  sudo yum install git
+   78  git clone https://github.com/meyals/CourseFiles.git
+   79  ls -lrt
+   80  mv Dockerfile CourseFiles/
+   81  cd CourseFiles/
+   82  ls -lrt
+   83  git add Dockerfile
+   84  git commit
+   85  git push
+   86  vi Dockerfile
+   87  docker build -t eyal/e1 .
+   88  vi Dockerfile
+   89  vi setenv.test
+   90  vi Dockerfile
+   91  docker run -i -t --rm eyal/e1
+   92  vi Dockerfile
+   93  vi setenv.test
+   94  mv setenv.test .bash_profile
+   95  vi Dockerfile
+   96  docker build -t eyal/e1 .
+   97  docker run -i -t --rm eyal/e1
+   98  vi Dockerfile
+   99  ls -lrt
+  100  ls -lrta
+  101  cat .bash_profile
+  102  docker build -t eyal/e1 .
+  103  docker run -i -t --rm eyal/e1
+  104  ls -lrta
+  105  vi Dockerfile
+  106  docker run -i -t --rm eyal/e1
+  107  vi Dockerfile
+  108  docker build -t eyal/e1 .
+  109  docker run -i -t --rm eyal/e1
+  110  vi Dockerfile
+  111  docker build -t eyal/e1 .
+  112  docker run -i -t --rm eyal/e1
+  113  vi Dockerfile
+  114  docker build -t eyal/e1 .
+  115  docker run -i -t --rm eyal/e1
+  116  vi Dockerfile
+  117  git add Dockerfile
+  118  git status
+  119  vi DockerCommands
+  120  hist
+  121  history
+[ec2-user@ip-172-31-12-156 CourseFiles]$ history
+
