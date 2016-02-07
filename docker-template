@@ -1,4 +1,4 @@
-FROM petclinic-eyal
+FROM centos:latest
 MAINTAINER eyal
 
 #install java
