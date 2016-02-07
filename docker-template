@@ -13,4 +13,5 @@ RUN mkdir /logs
 
 COPY petclinic2.war /usr/share/tomcat/webapps/
 
-
+#start tomcat when container starts
+CMD tomcat start
