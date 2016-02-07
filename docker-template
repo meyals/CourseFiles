@@ -1,0 +1,16 @@
+FROM petclinic-eyal
+MAINTAINER eyal
+
+#install java
+RUN yum -y install java-1.8.0-openjdk-devel.x86_64
+#install tomcat
+RUN yum -y install tomcat
+
+# for tomcat start
+ENV NAME eyal
+#for tomcat start
+RUN mkdir /logs
+
+COPY spring-petclinic-eyal-1.0.0-20160207.111801-1.war /usr/share/tomcat/webapps/
+
+
