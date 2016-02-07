@@ -15,7 +15,7 @@
       template: src=/pet-clinic-docker/devops/docker-template dest=/pet-clinic-docker/Dockerfile
           
     - name: Build docker with petclinic
-      docker_image: path="/pet-clinic-docker/" name="eyal/petclinic" state=present
+      docker_image: path="/pet-clinic-docker/" name="eyal/petclinic" state=build
 
     - name: start image
       docker:
