@@ -11,6 +11,6 @@ ENV NAME eyal
 #for tomcat start
 RUN mkdir /logs
 
-COPY petclinic.war /usr/share/tomcat/webapps/
+COPY petclinic2.war /usr/share/tomcat/webapps/
 
 
