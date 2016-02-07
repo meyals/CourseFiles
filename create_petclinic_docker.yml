@@ -6,7 +6,7 @@
       become: yes
       become_method: sudo
       get_url: url=http://52.28.236.118:8081/artifactory/libs-snapshot-local/org/springframework/samples/spring-petclinic-eyal/1.0.0-SNAPSHOT/spring-petclinic-eyal-1.0.0-20160207.111801-1.war
-           dest=/pet-clinic-docker/petclinic2.war mode=0644
+           dest=/pet-clinic-docker/petclinic.war mode=0644
 
     - name: Clone CourseFiles
       git: repo=https://github.com/meyals/CourseFiles dest=/pet-clinic-docker/devops/ update=no
@@ -17,4 +17,10 @@
     - name: Build docker with petclinic
       docker_image: path="/pet-clinic-docker/" name="eyal/petclinic" state=present
 
-
+    - name: start image
+      docker:
+        name: myservice
+        image: eyal/petclinic
+        state: restarted
+        ports:
+          - "8181:8080"
