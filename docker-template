@@ -11,6 +11,6 @@ ENV NAME eyal
 #for tomcat start
 RUN mkdir /logs
 
-COPY spring-petclinic-eyal-1.0.0-20160207.111801-1.war /usr/share/tomcat/webapps/
+COPY petclinic.war /usr/share/tomcat/webapps/
 
 
