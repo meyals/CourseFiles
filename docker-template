@@ -1,7 +1,7 @@
 FROM centos:latest
 MAINTAINER eyal
 
-#install java
+#install java 
 RUN yum -y install java-1.8.0-openjdk-devel.x86_64
 #install tomcat
 RUN yum -y install tomcat
